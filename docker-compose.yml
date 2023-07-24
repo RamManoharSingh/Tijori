@@ -1,0 +1,18 @@
+version: "3"
+services:
+  tams-web1:
+    container_name: tams-web1
+#    restart: always
+    build: .
+    #    command: bash -c "./script.sh"
+    networks:
+       - tams-web
+    volumes:
+    - ./:/var/www/html/
+    ports:
+       - "8098:80"
+#Docker Networks
+networks:
+  tams-web:
+    driver: bridge
+
